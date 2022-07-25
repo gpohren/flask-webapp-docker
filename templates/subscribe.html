@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+   <div class="container">
+   <br>
+     <h1>Subscribe</h1>
+   <br>
+     {% if error_statement %}
+   <div class="alert alert-warning alert-dismissible fade show" role="alert">
+     {{ error_statement }}
+     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+     {% endif %}
+   <form action="/form" method="POST">
+     <div class="row">
+       <div class="col">
+         <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name" name="name" value="{{ name }}">
+     </div>
+       <div class="col">
+         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email" value="{{ email }}">
+       </div>
+     </div>
+     <br> 
+       <button type="submit" class="btn btn-secondary">Submit</button>
+   </form>
+   </div>
+{% endblock %}
